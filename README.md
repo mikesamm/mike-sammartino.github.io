@@ -5,6 +5,7 @@
 
 ## Portfolio Page
 - Only need to do 1-5 TODOS
+- complete before monday, send screenshot of website
 
 ## Git commands
 1) In your terminal, type => git add -A
