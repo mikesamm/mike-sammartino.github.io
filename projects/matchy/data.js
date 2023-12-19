@@ -40,11 +40,14 @@ console.log(noises[noises.length -1]);
 // logging the whole array
 console.log(noises);
 
-
 //////////////////////////////////////////////////////////////////////
 // Step 3 - Combining Step 1 and 2 ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// assigning object noise value to array noises
+animal['noises'] = noises;
+// adding another noise to noises property array
+animal.noises.push('purr');
+console.log(animal);
 
 
 /* *******************************************************************
