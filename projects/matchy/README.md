@@ -80,30 +80,30 @@ As we code, save and refresh the browser tab running Matchy. Your work will begi
 It's super important to give your brain and yourself a rest when you can! Grab a drink and have a think! For like 10 minutes, then, **BACK TO WORK!** :)
 
 ## Step 6 - A Collection of Animals
- 1. [ ] Create a variable named `animals` and assign it to an empty array.
- 2. [ ] `push` our `animal` that we created to `animals`. You should now see your first animal appear on your `index.html` page!
- 3. [ ] `console.log` `animals`. What does it look like?
- 4. [ ] Create a variable called `duck` and assign it to the data:
+ 1. [x] Create a variable named `animals` and assign it to an empty array.
+ 2. [x] `push` our `animal` that we created to `animals`. You should now see your first animal appear on your `index.html` page!
+ 3. [x] `console.log` `animals`. What does it look like?
+ 4. [x] Create a variable called `duck` and assign it to the data:
   - `{ species: 'duck', name: 'Jerome', noises: ['quack', 'honk', 'sneeze', 'woosh'] }`
- 5. [ ] `push` `duck` to `animals`
- 6. [ ] `console.log` `animals`. What does it look like?
- 7. [ ] Create two more animal objects each with a species, a name, and at least two sounds sounds and add each one of them to `animals.
- 8. [ ] `console.log` `animals`, and, `console.log` the length of `animals`. Is everything looking right?
+ 5. [x] `push` `duck` to `animals`
+ 6. [x] `console.log` `animals`. What does it look like?
+ 7. [x] Create two more animal objects each with a species, a name, and at least two sounds sounds and add each one of them to `animals`.
+ 8. [x] `console.log` `animals`, and, `console.log` the length of `animals`. Is everything looking right?
 
 
 ## Step 7 - Making Friends
 
 Imagine that our website has a profile page for each animal. On this profile page we can see a list of each animal's friend on the website. Just like how people have a list of friends or followers on facebook or instagram. What would be a good data structure to hold this list of friends?
 
- 1. [ ] Choose a data structure for this **list** of friends.
- 2. [ ] Write a comment in your code that explains why you chose this data structure.
- 3. [ ] Create a variable called `friends` and assign it to the data structure that you chose.
- 4. [ ] Take a look at the documentation for `Math.random` here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
- 5. [ ] Write a function called `getRandom` that takes our `animals` array and returns  a random `index` of the input array, using `Math.random`
- 6. [ ] Using a random index from this function that you just created, get a random animal and add its `name` to `friends`.
- 7. [ ] `console.log` `friends`.
- 8. [ ] Using **bracket notation**, add the `friends` list as a **property** also named `friends` on one of the animals in the `animals` array
- 9. [ ] `console.log` your work.
+ 1. [x] Choose a data structure for this **list** of friends.
+ 2. [x] Write a comment in your code that explains why you chose this data structure.
+ 3. [x] Create a variable called `friends` and assign it to the data structure that you chose.
+ 4. [x] Take a look at the documentation for `Math.random` here: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+ 5. [x] Write a function called `getRandom` that takes our `animals` array and returns  a random `index` of the input array, using `Math.random`
+ 6. [x] Using a random index from this function that you just created, get a random animal and add its `name` to `friends`.
+ 7. [x] `console.log` `friends`.
+ 8. [x] Using **bracket notation**, add the `friends` list as a **property** also named `friends` on one of the animals in the `animals` array
+ 9. [x] `console.log` your work.
  
 ## Step 8 - Take Another Break!!
 
