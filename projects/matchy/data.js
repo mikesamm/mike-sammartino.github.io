@@ -128,6 +128,7 @@ console.log(friends);
 
 // Using **bracket notation**, add the `friends` list as a **property** also named `friends` on one of the animals in the `animals` array
 animals[0].friends = friends;
+console.log(animals);
 
 /**
  * Nice work! You're done Part 1. Pat yourself on the back and
