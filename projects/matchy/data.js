@@ -119,7 +119,7 @@ var friends = [];
 
 // function to return a random index number for an array
 function getRandom(array) {
-  return Math.round(Math.random() * array.length);
+  return Math.round(Math.random() * (array.length - 1));
 }
 
 // Using a random index from this function that you just created, get a random animal and add its `name` to `friends`

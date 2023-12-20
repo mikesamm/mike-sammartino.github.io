@@ -12,7 +12,19 @@
 //////////////////////////////////////////////////////////////////////
 // Step 1 - Search ///////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+function search(animalArr, name) {
+    // Looks through the `animals` Array, and returns the animal's Object if an animal with that name exists.
+    // use loop to look thru array
+    for ( let i = 0; i < animalArr.length; i++) {
+        // if the object in animal array has a name property equal to name
+        if (animalArr[i].name = name) {
+            // return the animal's object
+            return animalArr[i];
+        } else {
+            return null;
+        }
+    }
+}
 
 
 //////////////////////////////////////////////////////////////////////
