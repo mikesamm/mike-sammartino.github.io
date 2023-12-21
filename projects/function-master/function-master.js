@@ -2,38 +2,73 @@
 // Function 1 - Object Values ////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
 
+// function should return the values from an object in an array
 function objectValues(object) {
-
+    // storage array
+    let values = [];
+    // loop through the object
+    for (var key in object) {
+        // push values to the storage array
+        values.push(object[key]);
+    }
+    // return storage array
+    return values;
 } 
 
 //////////////////////////////////////////////////////////////////////
 // Function 2 - Keys to String ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take an object and return all its keys in a string each separated with a space
+// ex: "a b ponies dingle"
 function keysToString(object) {
-
+    // storage array
+    let keys = [];
+    // loop through object
+    for (var key in object) {
+        keys.push(key);
+    }
+    // join array into string
+    let keysString = keys.join(' ');
+    // return string of keys
+    return keysString;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 3 - Values to String /////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take an object and return all its string values in a string each separated with a space
+// non-string values should not be included
 function valuesToString(object) {
-    
+    // storage array
+    let stringValues = [];
+    // loop over object
+    for (let key in object) {
+        if (typeof object[key] === 'string') {
+            stringValues.push(object[key]);
+        }
+    }
+    // join stringValues into string
+    let stringString = stringValues.join(' ');
+    // return string of strings
+    return stringString;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 4 - Array or Object //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take one argument and return 'array' if its an array and 'object' if its an object
 function arrayOrObject(collection) {
-    
+    if (Array.isArray(collection)) {
+        return 'array';
+    } else if (typeof collection === 'object') {
+        return 'object';
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 5 - Capitalize Word //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// 
 function capitalizeWord(string) {
     
 }
