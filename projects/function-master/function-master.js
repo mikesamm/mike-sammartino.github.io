@@ -68,48 +68,77 @@ function arrayOrObject(collection) {
 //////////////////////////////////////////////////////////////////////
 // Function 5 - Capitalize Word //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-// 
+// Should take a string of one word, and return the word with its first letter capitalized
 function capitalizeWord(string) {
-    
+    return string.slice(0, 1).toUpperCase() + string.slice(1);
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 6 - Capitalize All Words /////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take a string of words and return a string with all the words capitalized
 function capitalizeAllWords(string) {
-    
+    // convert string to an array
+    let arrayWords = string.split(' ');
+    // loop through array and capitalize all the words
+    for (let i = 0; i < arrayWords.length; i++) {
+        arrayWords[i] = arrayWords[i].slice(0, 1).toUpperCase() + arrayWords[i].slice(1);
+    }
+    // join arrayWords into string again
+    let stringCap = arrayWords.join(' ');
+    // return new capitalized string
+    return stringCap;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 7 - Welcome Message //////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take an object with a name property and return 'Welcome <Name>!'
 function welcomeMessage(object) {
-
+    let capName = object.name.slice(0, 1).toUpperCase() + object.name.slice(1);
+    return 'Welcome ' + capName + '!';
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 8 - Profile Info /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take an object with a name and a species and return '<Name> is a <Species>'
 function profileInfo(object) {
-
+    let capName = object.name.slice(0, 1).toUpperCase() + object.name.slice(1);
+    let capSpecies = object.species.slice(0, 1).toUpperCase() + object.species.slice(1);
+    return capName + ' is a ' + capSpecies;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 9 - Maybe Noises /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take an object, if this object has a noises array return them as a string separated by a space, if there are no noises return 'there are no noises'
 function maybeNoises(object) {
-
+    if (object.hasOwnProperty('noises')) {
+        if (object.noises.length === 0) {
+            return "there are no noises";
+        }
+        return object.noises.join(' ');
+    } else if (!object.hasOwnProperty('noises')) {
+        return "there are no noises";
+    }
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 10 - Has Words ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take a string of words and a word and return true if <word> is in <string of words>, otherwise return false.
 function hasWord(string, word) {
+    // creating a regular expression of word input
+    const s = new RegExp(word);
+    // checking string for word
+    let matchArray = string.match(word);
+    // if matchArray is true, return true, else false
+    if (matchArray) {
+        return true;
+    } else {
+        return false;
+    }
 
 }
 
