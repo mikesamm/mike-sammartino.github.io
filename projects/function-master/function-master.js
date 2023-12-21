@@ -145,26 +145,70 @@ function hasWord(string, word) {
 //////////////////////////////////////////////////////////////////////
 // Function 11 - Add Friend //////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take a name and an object and add the name to the object's friends array then return the object
 function addFriend (name, object) {
-
+    object.friends.push(name);
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 12 - Is Friend ///////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take a name and an object and return true if <name> is a friend of <object> and false otherwise
 function isFriend(name, object) {
-
+    // storage boolean
+    let isFriend = false;
+    // does object have friends property?
+    if (object.hasOwnProperty('friends')) {
+        // loop through friends array in object
+        for (let i = 0; i < object.friends.length; i++) {
+            if (object.friends[i] === name) {
+                isFriend = true;
+            }
+        }
+    }
+    // return boolean
+    return isFriend;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 13 - Non-Friends /////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take a name and a list of people, and return a list of all the names that <name> is not friends with
 function nonFriends(name, array) {
-
-}
+    // make storage arrays
+    let allOtherPeople = [];
+    let yesFriends = [];
+    let nonFriends = [];
+    
+    // array of all people's names
+    for (let i = 0; i < array.length; i++) {
+      if (name !== array[i].name) {
+        allOtherPeople.push(array[i].name);
+      }
+    }
+    
+    // name's friends, compared to all possible people
+    for (let i = 0; i < array.length; i++) {      // accessing array of people
+      // match name with correct array object
+      if (name === array[i].name) {
+        yesFriends = array[i].friends;
+      }
+    }
+    
+    // access allOtherPeople and establish test friend
+    for (let i = 0; i < allOtherPeople.length; i++) {
+      let testFriend = allOtherPeople[i];
+      // test yesFriends array against all testFriends
+      if (!yesFriends.includes(testFriend)) {
+        // push testFriend to nonFriends if not found in yesFriends
+        nonFriends.push(testFriend);
+      }  
+    }
+    
+    // return storage array
+    return nonFriends;
+  }
 
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
