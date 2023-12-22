@@ -213,25 +213,49 @@ function nonFriends(name, array) {
 //////////////////////////////////////////////////////////////////////
 // Function 14 - Update Object ///////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take an object, a key and a value. Should update the property <key> on <object> with new <value>. If <key> does not exist on <object> create it.
 function updateObject(object, key, value) {
-
+    // object has the key property
+    // object needs the key property
+    object[key] = value;
+    // return object
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 15 - Remove Properties ///////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take an object and an array of strings. Should remove any properties on <object> that are listed in <array>
 function removeProperties(object, array) {
-
+    // access each element of array and test to see if property in object
+    for (let i = 0; i < array.length; i++){
+        // if array[i] is property on object, remove it
+        if (object.hasOwnProperty(array[i])){
+            delete object[array[i]];
+        }
+    }
+    // return object
+    return object;
 }
 
 //////////////////////////////////////////////////////////////////////
 // Function 16 - Dedup ///////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////
-
+// Should take an array and return an array with all the duplicates removed
 function dedup(array) {
+    // storage array
+    let uniqueChars = []
+    
+    for (let i = 0; i < array.length; i++){
+        // if array value is not in storage array
+        if (!uniqueChars.includes(array[i])){
+            // add to storage array
+            uniqueChars.push(array[i]);
+        }
+    }
 
+    // return array
+    return uniqueChars;
 }
 
 //////////////////////////////////////////////////////////////////////
