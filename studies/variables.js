@@ -5,7 +5,9 @@
  * 
  * 1. Declaration and Assignment
  * 
- * 2. Hoisting
+ * 2. `var`, `let`, and `const`
+ *
+ * 3. Hoisting
  */
 
 // 1. Declaration
