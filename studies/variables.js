@@ -48,3 +48,14 @@ MAGIC_NUMBER = 42;  // MAGIC_NUMBER *cannot* be reassigned because it is a const
 // const is used when the value in a variable should not and will not be changed in a program, const CANNOT be reassigned.
 
 // var and let can both be reassigned, but behavior and rules with scope and hoisting differ between the two. 
+
+// 3. Hoisting 
+
+/**
+* var can only ever be globally or function scoped.
+*   - assignment is NOT hoisted
+*   - declaration reserves some memory for that variable
+*   - if var is used for function expression, var NAME is still the only thing hoisted.
+*
+* if something is declared without a keyword, it will default to the global scope, no matter where it looks like it is in scope
+ */
