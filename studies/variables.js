@@ -5,9 +5,7 @@
  * 
  * 1. Declaration and Assignment
  * 
- * 2. `var`, `let`, and `const`
- * 
- * 3. Hoisting
+ * 2. Hoisting
  */
 
 // 1. Declaration
@@ -21,30 +19,3 @@ const MAGIC_NUMBER = 42;
 
 // Assignment 
 age = 32;
-animal = 'giraffe';
-
-// Reassignment
-age = 54;
-animal = 'elephant';
-MAGIC_NUMBER = 42;  // MAGIC_NUMBER *cannot* be reassigned because it is a const (constant).
-
-// 2. `var`, `let`, and `const`
-
-// The `var`, `let` and `const` keywords are all used to declare variables. 
-
-/**
-* They each have different rules so they are NOT completely interchangeable.
-*
-| --    | reassignable | hoisted | scoped to funcs | scoped to if/loop blocks |
-| ----- | ------------ | ------- | --------------- | ------------------------ |
-| var   | yes          | yes     | yes             | no                       |
-| let   | yes          | no      | yes             | yes                      |
-| const | no           | no      | yes             | yes                      |
-*
-*/
-
-// `var` has been part of the JavaScript language since its beginnings. It has some caveats when using it to declare variables, so in 2015 when ES6 came out, `let` and `const` were introduced. 
-
-// const is used when the value in a variable should not and will not be changed in a program, const CANNOT be reassigned.
-
-// var and let can both be reassigned, but behavior and rules with scope and hoisting differ between the two. 
