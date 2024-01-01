@@ -19,3 +19,4 @@ const MAGIC_NUMBER = 42;
 
 // Assignment 
 age = 32;
+let test = 'test for git';
