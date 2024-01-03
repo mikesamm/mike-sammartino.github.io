@@ -20,8 +20,9 @@ var _ = {};     // creating an object where methods will be added later
 *   _.identity(5) === 5
 *   _.identity({a: "b"}) === {a: "b"}
 */
-_.identity = function(){
 
+_.identity = function(value){
+    return value;
 };
 
 /** _.typeOf
@@ -43,6 +44,19 @@ _.identity = function(){
 * _.typeOf("javascript") -> "string"
 * _.typeOf([1,2,3]) -> "array"
 */
+
+_.typeOf = function(value){
+    // before using typeof, filter out non-object object types
+    if (Array.isArray(value)){
+        return "array";
+    } else if (value === null){
+        return "null";
+    }  else if (value === undefined){
+        return "undefined";
+    } else {    // return type using typeof operator 
+        return typeof value;
+    }
+}
 
 
 /** _.first
@@ -256,7 +270,22 @@ _.map = function(collection, func){
 *   _.every([2,4,6], function(e){return e % 2 === 0}) -> true
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
+_.every = function(collection, func){
+    // ***** catch edge case first!!! ****
+    // if collection is an array
+        // if func is null
+            // loop through array, for
+                // if item is false, return false
+        // else
+            // call func 
+    // if collection is object
+        // if func is null
+            // loop through object, for in
+                // if object[key] is falsy, return false
+        // else
+            //
 
+}
 
 /** _.some
 * Arguments:
