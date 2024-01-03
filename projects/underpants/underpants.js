@@ -3,7 +3,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode
 'use strict';
 
-var _ = {};
+var _ = {};     // creating an object where methods will be added later
 
 
 /**
@@ -20,7 +20,9 @@ var _ = {};
 *   _.identity(5) === 5
 *   _.identity({a: "b"}) === {a: "b"}
 */
+_.identity = function(){
 
+};
 
 /** _.typeOf
 * Arguments:
@@ -208,7 +210,19 @@ var _ = {};
 * Examples:
 *   _.map([1,2,3,4], function(e){return e * 2}) -> [2,4,6,8]
 */
+_.map = function(collection, func){
+    // make storage array for output
+    // declare function expressions, no assignment yet
+    // check to see if array
+        // function expression = call func with element, index, collection parameters
+            // return the parameters
+    // check to see if object
+        // function expression = call func with value, key, collection parameters
+            // return the parameters
+    // push function expression variables to storage array
+    // return storage array
 
+}
 
 /** _.pluck
 * Arguments:
