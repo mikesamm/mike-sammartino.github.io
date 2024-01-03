@@ -56,7 +56,7 @@ _.typeOf = function(value){
     } else {    // return type using typeof operator 
         return typeof value;
     }
-}
+};
 
 
 /** _.first
@@ -77,6 +77,23 @@ _.typeOf = function(value){
 *   _.first(["a", "b", "c"], 2) -> ["a", "b"]
 */
 
+_.first = function(array, num){
+    // output array
+    let output = [];
+    // if array is not array, return {}
+    if (!Array.isArray(array)){
+        return [];
+    } else if (num === undefined || typeof num !== "number"){   // number is not given or not a number
+        return array[0];
+    } else if (num > array.length){
+        return array;
+    } else {    // return first num items from array in new array
+        for (let i = 0; i < num; i++){
+            output.push(array[i]);
+        }
+    }
+    return output;
+};
 
 /** _.last
 * Arguments:
@@ -96,6 +113,23 @@ _.typeOf = function(value){
 *   _.last(["a", "b", "c"], 2) -> ["b", "c"]
 */
 
+_.last = function(array, num){
+    // output array
+    let output = [];
+    // if array is not array, return []
+    if (!Array.isArray(array)){
+        return [];
+    } else if (num === undefined || typeof num !== "number"){   // number is not given or not a number
+        return array[array.length - 1];
+    } else if (num > array.length){
+        return array;
+    } else {    // return last num items from array in new array
+        for (let i = array.length - 1; i >= array.length - num; i--){
+            output.unshift(array[i]);
+        }
+    }
+    return output;
+};
 
 /** _.indexOf
 * Arguments:
@@ -113,6 +147,16 @@ _.typeOf = function(value){
 *   _.indexOf(["a","b","c"], "d") -> -1
 */
 
+_.indexOf = function(array, value){
+    // loop through array
+    for (let i = 0; i < array.length; i++){
+        if (array[i] === value){
+            return i;
+        }
+    }
+    // if value is not in array, return -1
+    return -1;
+}
 
 /** _.contains
 * Arguments:
