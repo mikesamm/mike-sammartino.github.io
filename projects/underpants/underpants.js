@@ -173,6 +173,11 @@ _.indexOf = function(array, value){
 *   _.contains([1,"two", 3.14], "two") -> true
 */
 
+_.contains = function(array, value){
+    // use array method includes in ternary format
+    return array.includes(value) ? true : false;
+}
+
 
 /** _.each
 * Arguments:
@@ -190,6 +195,16 @@ _.indexOf = function(array, value){
 *      -> should log "a" "b" "c" to the console
 */
 
+.each = function(collection, func){
+    // if collection is an array
+    if (Array.isArray(array)){
+        // call func for each element with args: element, index, collection
+
+    } else {    // if collection is an object
+        // call func for each property with args: value, key, collection
+        
+    }
+}
 
 /** _.unique
 * Arguments:
@@ -201,6 +216,9 @@ _.indexOf = function(array, value){
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
+_.unique = function(array){
+    // _.indexOf(array, value)
+};
 
 /** _.filter
 * Arguments:
