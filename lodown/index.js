@@ -10,7 +10,37 @@
  * name of the function: 1-3 sentence description as to what the function does
  * 
  * for any function documentation: create a general description, identify parameters, identify return values
+*/
+/**
+ * indentity: Function takes in an input value and returns the value unchanged. 
+ * @param {*} value: Function takes in any input value.
+ * @returns {*} value: Function returns input value unchanged.
  */
+function identity(value){
+    return value;
+};
+
+module.exports.each = identity;
+
+/**
+ * typeOf: Function takes in an input and returns a string representing the data type of it.
+ * @param {*} value: Function takes in any input value.
+ * @returns: A string representing the data type of the input value.
+ */
+function typeOf(value){
+    // before using typeof, filter out non-object object types
+    if (Array.isArray(value)){
+        return "array";
+    } else if (value === null){
+        return "null";
+    }  else if (value === undefined){
+        return "undefined";
+    } else {    // return type using typeof operator 
+        return typeof value;
+    }
+};
+
+module.exports.each = typeOf;
 
 /**
  * each: Designed to loop over a collection, Array or Object, and applies the 
@@ -32,14 +62,3 @@ function each(collection, action) {
     }
 }
 module.exports.each = each;
-
-/**
- * indentity: Functions takes in an input value and returns the value unchanged. 
- * @param {*} value: Function takes in any input value.
- * @returns {*} value: Function returns input vlaue unchanged.
- */
-function identity(value){
-    return value;
-};
-
-module.exports.each = identity;

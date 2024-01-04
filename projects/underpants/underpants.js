@@ -195,7 +195,7 @@ _.contains = function(array, value){
 *      -> should log "a" "b" "c" to the console
 */
 
-.each = function(collection, func){
+_.each = function(collection, func){
     // if collection is an array
     if (Array.isArray(array)){
         // call func for each element with args: element, index, collection
