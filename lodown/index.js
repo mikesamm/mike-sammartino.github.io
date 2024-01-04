@@ -241,24 +241,28 @@ function reject(array, test){
 
 module.exports.each = reject;
 
+/**
+ * partition: Function returns an array of arrays. The nested arrays are made of elements that 
+ * either pass the test function or fail it.
+ * 
+ * @param { Array } array: Function takes in this array and iterates over it.
+ * @param { Function } test: Function uses this as a callback, should return a boolean value.
+ * @returns { Array } output: Returns an array of arrays, nested arrays are based on return value from callback function.
+ */
 function partition(array, test){
-    // storage variables for array of arrays output
+    // storage variable for array of arrays output
     let output = [];
-    let truthy = [];
-    let falsy = [];
 
-    // call function for each element in the array, with args: element, index, array
-    for (let i = 0; i < array.length; i++){
-        // if element passes the test function, push to truthy
-        if (test(array[i], i, array)){
-            truthy.push(array[i]);
-        } else if (!test(array[i], i, array)){  // if element does not pass the test function, pass to falsy
-            falsy.push(array[i]);
-        }
-    }
+    // use filter() and reject() return values (arrays)
+    let truthy = _.filter(array, test);
+    let falsy = _.reject(array, test);
+
     // push inner arrays to output
     output.push(truthy, falsy);
 
     // return output, array of arrays
     return output;
 };
+
+module.exports.each = partition;
+

@@ -353,17 +353,20 @@ _.partition = function(array, test){
 */
 _.map = function(collection, func){
     // make storage array for output
-    // declare function expressions, no assignment yet
-    // check to see if array
-        // function expression = call func with element, index, collection parameters
-            // return the parameters
-    // check to see if object
-        // function expression = call func with value, key, collection parameters
-            // return the parameters
-    // push function expression variables to storage array
-    // return storage array
+    let output = [];
 
-}
+
+    // if array
+        // call func with args element, index, array
+        // use _.each() format
+    // if object
+        // call func with args value, key, object
+        // use _.each() format
+
+
+    // return storage array
+    return output;
+};
 
 /** _.pluck
 * Arguments:
