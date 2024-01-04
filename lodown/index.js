@@ -199,7 +199,7 @@ function filter(array, test){
     // output array
     let output = [];
 
-    // call filter function for each element, passing element, index, array
+    // call test function for each element, passing element, index, array
     for (let i = 0; i < array.length; i++){
         if (test(array[i], i, array)){
             output.push(array[i]);
@@ -211,3 +211,32 @@ function filter(array, test){
     // return output array
     return output;
 };
+
+module.exports.each = filter;
+
+/**
+ * reject: Function takes in an array and returns a new array populated only by values from input array 
+ * that did not pass the test function.
+ * 
+ * @param { Array } array: Function uses this callback to test each array element. Callback should return a boolean.
+ * @param { Function } test: 
+ * @returns { Array } output: Function returns array with the values that did not pass the test function.
+ */
+function reject(array, test){
+    // output array
+    let output = [];
+
+    // call test function for each element in array with args: element, index, array
+    for (let i = 0; i < array.length; i++){
+        // if callback resolves to false
+        if (!test(array[i], i, array)){
+            // add element to output array
+            output.push(array[i]);
+        }
+    }
+
+    // return output array
+    return output;
+};
+
+module.exports.each = reject;

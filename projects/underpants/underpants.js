@@ -257,7 +257,7 @@ _.filter = function(array, test){
     // output array
     let output = [];
 
-    // call filter function for each element, passing element, index, array
+    // call test function for each element, passing element, index, array
     for (let i = 0; i < array.length; i++){
         if (test(array[i], i, array)){
             output.push(array[i]);
@@ -284,6 +284,22 @@ _.filter = function(array, test){
 * Examples:
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
+_.reject = function(array, test){
+    // output array
+    let output = [];
+
+    // call test function for each element in array with args: element, index, array
+    for (let i = 0; i < array.length; i++){
+        // if callback resolves to false
+        if (!test(array[i], i, array)){
+            // add element to output array
+            output.push(array[i]);
+        }
+    }
+
+    // return output array
+    return output;
+};
 
 //----------------------------------------------------------------------------------------------------------
 
