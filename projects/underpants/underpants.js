@@ -197,12 +197,16 @@ _.contains = function(array, value){
 
 _.each = function(collection, func){
     // if collection is an array
-    if (Array.isArray(array)){
+    if (Array.isArray(collection)){
         // call func for each element with args: element, index, collection
-
+        for (let i = 0; i < collection.length; i++){
+            func(collection[i], i, collection);
+        }
     } else {    // if collection is an object
         // call func for each property with args: value, key, collection
-        
+        for (let key in collection){
+            func(collection[key], key, collection);
+        }
     }
 }
 
@@ -250,6 +254,7 @@ _.unique = function(array){
 *   _.reject([1,2,3,4,5], function(e){return e%2 === 0}) -> [1,3,5]
 */
 
+//----------------------------------------------------------------------------------------------------------
 
 /** _.partition
 * Arguments:

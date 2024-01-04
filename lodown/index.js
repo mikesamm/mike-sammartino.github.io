@@ -146,14 +146,17 @@ module.exports.each = contains;
  * @param {Function} action: The Function to be applied to each value in the 
  * collection
  */
-function each(collection, action) {
-    if(Array.isArray(collection)) {
-        for(var i = 0; i < collection.length; i++) {
-            action(collection[i], i, collection);
+function each(collection, func){
+    // if collection is an array
+    if (Array.isArray(collection)){
+        // call func for each element with args: element, index, collection
+        for (let i = 0; i < collection.length; i++){
+            func(collection[i], i, collection);
         }
-    } else {
-        for (var key in collection) {
-            action(collection[key], key, collection);
+    } else {    // if collection is an object
+        // call func for each property with args: value, key, collection
+        for (let key in collection){
+            func(collection[key], key, collection);
         }
     }
 }
