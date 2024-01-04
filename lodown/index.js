@@ -161,3 +161,29 @@ function each(collection, func){
     }
 }
 module.exports.each = each;
+
+/**
+ * unique: Function takes in an array and returns an array with only the unique values from the input array. 
+ * In other words, function returns the input array but with all duplicate values removed.
+ * 
+ * @param { Array } array: The input array that the function iterates over.
+ * @returns { Array } output: Returns an array with all the unique values
+ */
+function unique(array){  
+    // output array for unique values
+    let output = [];
+
+    // loop through the input array
+    for (let i = 0; i < array.length; i++){
+        // if output does not contain array[i], push to output
+        if (!_.contains(output, array[i])){
+            output.push(array[i]);
+        }
+        // if output already contains array[i], do nothing
+    }
+
+    // return output array
+    return output;
+};
+
+module.exports.each = unique;

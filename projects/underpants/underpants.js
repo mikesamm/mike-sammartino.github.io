@@ -220,8 +220,21 @@ _.each = function(collection, func){
 *   _.unique([1,2,2,4,5,6,5,2]) -> [1,2,4,5,6]
 */
 
-_.unique = function(array){
-    // _.indexOf(array, value)
+_.unique = function(array){  
+    // output array for unique values
+    let output = [];
+
+    // loop through the input array
+    for (let i = 0; i < array.length; i++){
+        // if output does not contain array[i], push to output
+        if (!_.contains(output, array[i])){
+            output.push(array[i]);
+        }
+        // if output already contains array[i], do nothing
+    }
+
+    // return output array
+    return output;
 };
 
 /** _.filter
