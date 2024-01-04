@@ -1,6 +1,16 @@
 'use strict';
 
 // YOU KNOW WHAT TO DO //
+/**
+ * as we go through underpants.js, we will be adding documentation for the function created
+ * 
+ * copy and paste the method 
+ * turn function expression into function declaration
+ *  type /** and it will auto complete some things
+ * name of the function: 1-3 sentence description as to what the function does
+ * 
+ * for any function documentation: create a general description, identify parameters, identify return values
+ */
 
 /**
  * each: Designed to loop over a collection, Array or Object, and applies the 
@@ -22,17 +32,6 @@ function each(collection, action) {
     }
 }
 module.exports.each = each;
-
-/**
- * as we go through underpants.js, we will be adding documentation for the function created
- * 
- * copy and paste the method 
- * turn function expression into function declaration
- *  type /** and it will auto complete some things
- * name of the function: 1-3 sentence description as to what the function does
- * 
- * for any function documentation: create a general description, identify parameters, identify return values
- */
 
 /**
  * indentity: Functions takes in an input value and returns the value unchanged. 
