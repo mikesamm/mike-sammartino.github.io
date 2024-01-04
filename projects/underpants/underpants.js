@@ -253,6 +253,24 @@ _.unique = function(array){
 *   use _.each in your implementation
 */
 
+_.filter = function(array, test){
+    // output array
+    let output = [];
+
+    // call filter function for each element, passing element, index, array
+    for (let i = 0; i < array.length; i++){
+        if (test(array[i], i, array)){
+            output.push(array[i]);
+        }
+        // if filter false, do nothing
+        // if filter returns non-boolean, do nothing
+
+    }
+
+    // return output array
+    return output;
+};
+
 
 /** _.reject
 * Arguments:

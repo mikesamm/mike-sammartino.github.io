@@ -187,3 +187,27 @@ function unique(array){
 };
 
 module.exports.each = unique;
+
+/**
+ * filter: Function takes in an array and returns a new array populated only by values from input array that passed the test function.
+ * 
+ * @param { Array } array: Function takes this array in and iterates over it. 
+ * @param { Function } test: Function uses this callback to test each array element. Callback should return a boolean.
+ * @returns { Array } output: Function returns array with the values that passed the test function.
+ */
+function filter(array, test){
+    // output array
+    let output = [];
+
+    // call filter function for each element, passing element, index, array
+    for (let i = 0; i < array.length; i++){
+        if (test(array[i], i, array)){
+            output.push(array[i]);
+        }
+        // if filter false, do nothing
+        // if filter returns non-boolean, do nothing
+    }
+
+    // return output array
+    return output;
+};
