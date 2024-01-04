@@ -240,3 +240,25 @@ function reject(array, test){
 };
 
 module.exports.each = reject;
+
+function partition(array, test){
+    // storage variables for array of arrays output
+    let output = [];
+    let truthy = [];
+    let falsy = [];
+
+    // call function for each element in the array, with args: element, index, array
+    for (let i = 0; i < array.length; i++){
+        // if element passes the test function, push to truthy
+        if (test(array[i], i, array)){
+            truthy.push(array[i]);
+        } else if (!test(array[i], i, array)){  // if element does not pass the test function, pass to falsy
+            falsy.push(array[i]);
+        }
+    }
+    // push inner arrays to output
+    output.push(truthy, falsy);
+
+    // return output, array of arrays
+    return output;
+};

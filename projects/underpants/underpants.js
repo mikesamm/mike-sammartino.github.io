@@ -301,7 +301,6 @@ _.reject = function(array, test){
     return output;
 };
 
-//----------------------------------------------------------------------------------------------------------
 
 /** _.partition
 * Arguments:
@@ -321,6 +320,20 @@ _.reject = function(array, test){
 *   }); -> [[2,4],[1,3,5]]
 }
 */
+_.partition = function(array, test){
+    // storage variable for array of arrays output
+    let output = [];
+
+    // use filter() and reject() return values (arrays)
+    let truthy = _.filter(array, test);
+    let falsy = _.reject(array, test);
+
+    // push inner arrays to output
+    output.push(truthy, falsy);
+
+    // return output, array of arrays
+    return output;
+};
 
 
 /** _.map
