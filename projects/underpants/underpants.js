@@ -382,6 +382,25 @@ _.map = function(collection, func){
 * Examples:
 *   _.pluck([{a: "one"}, {a: "two"}], "a") -> ["one", "two"]
 */
+_.pluck = function(array, prop){
+    // must use _.map()
+
+    // output storage
+    let output = [];
+
+    // from every element in array
+    for (let i = 0; i < array.length; i++){
+        // loop through object using map
+        // add value of prop to output
+        let value = _.map(array[i], function(){
+            return array[i][prop];
+        });
+        output.push(value);
+    }
+
+    // return output
+    return output;
+}
 
 
 /** _.every
