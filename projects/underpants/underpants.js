@@ -416,21 +416,50 @@ _.pluck = function(array, prop){
 *   _.every([1,2,3], function(e){return e % 2 === 0}) -> false
 */
 _.every = function(collection, func){
-    // ***** catch edge case first!!! ****
-    // if collection is an array
-        // if func is null
-            // loop through array, for
-                // if item is false, return false
-        // else
-            // call func 
-    // if collection is object
-        // if func is null
-            // loop through object, for in
-                // if object[key] is falsy, return false
-        // else
-            //
+    // if function is not given, return false
+    if (func === undefined){
+        if (Array.isArray(collection)){
+            // for every element, check truthyness
+            for (let i = 0; i < collection.length; i++){
+                if (!collection[i]){
+                    return false;
+                }
+            }
+        } else {  // if collection is an object
+            // for every property, check truthyness
+            for (let key in collection){
+                if (!collection[key]){
+                    return false;
+                }
+            }
+        }
 
-}
+        // return true if every element is truthy
+        return true;
+    }
+
+    // if collection is an array
+    if (Array.isArray(collection)){
+        // for every element, call func with parameters
+        for (let i = 0; i < collection.length; i++){
+            // if callback returns false, return false
+            if (!func(collection[i], i, collection)){
+                return false;
+            }
+        }
+    } else {  // if collection is an object
+        // for every property, call func with parameters
+        for (let key in collection){
+            // if callback returns false, return false
+            if (!func(collection[key], key, collection)){
+                return false;
+            }
+        }
+    }
+
+    // return true if none of the above triggered false
+    return true;
+};
 
 /** _.some
 * Arguments:
