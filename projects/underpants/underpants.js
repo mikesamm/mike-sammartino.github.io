@@ -227,7 +227,7 @@ _.unique = function(array){
     // loop through the input array
     for (let i = 0; i < array.length; i++){
         // if output does not contain array[i], push to output
-        if (!_.contains(output, array[i])){
+        if (_.indexOf(output, array[i]) === -1){
             output.push(array[i]);
         }
         // if output already contains array[i], do nothing
