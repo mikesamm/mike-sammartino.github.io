@@ -546,6 +546,28 @@ _.some = function(collection, test){
 * Examples:
 *   _.reduce([1,2,3], function(previousSum, currentValue, currentIndex){ return previousSum + currentValue }, 0) -> 6
 */
+_.reduce = function(array, func, seed){
+    // let seed = <whatever given>
+    // initialize previous result with seed
+    let prev = seed;
+    let start = 0;
+
+    // if no seed is given, use first element in collection as seed
+    if (seed === undefined){
+        prev = array[0];
+        start = 1;
+    }
+
+    // for every element in colleciton
+    for (let i = start; i < array.length; i++){
+        // invoke callback function
+        prev = func(prev, array[i], i);
+    }
+
+
+    // return final return value of callback function
+    return prev;
+};
 
 
 /** _.extend
