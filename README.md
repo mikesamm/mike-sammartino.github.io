@@ -21,3 +21,8 @@
 6) In terminal, type => os install
 7) When prompted, enter github username and personal access token
 8) Select project
+
+## Difficulty Producing Tests
+### Let's Get Functional
+1) Is the terminal in `workspace`?
+2) Is the github repo typed in correctly on line 19?
