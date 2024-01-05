@@ -255,10 +255,10 @@ function partition(array, test){
 
     // use filter() and reject() return values (arrays)
     let truthy = _.filter(array, test);
-    let falsy = _.reject(array, test);
+    let falsey = _.reject(array, test);
 
     // push inner arrays to output
-    output.push(truthy, falsy);
+    output.push(truthy, falsey);
 
     // return output, array of arrays
     return output;
@@ -322,14 +322,14 @@ module.exports.each = pluck;
 /**
  * every: Function takes in an array or object and a callback function. If the callback function returns true for every element,
  * function returns true; if callback function returns false even once, function returns false. If callback function is not given:
- * function will return true if all elements are truthy, or false if even one element is falsy.
+ * function will return true if all elements are truthy, or false if even one element is falsey.
  * 
  * @param { Array or Object } collection: Function takes in an array or object to iterate over.
  * @param { Function } func: Function takes in a callback function, should return boolean value.
  * @returns { Boolean }: Function returns true or false, based on conditions described above.
  */
 function every(collection, func){
-    // if function is not given, return false
+    // if function is not given
     if (func === undefined){
         if (Array.isArray(collection)){
             // for every element, check truthyness
@@ -375,3 +375,58 @@ function every(collection, func){
 };
 
 module.exports.each = every;
+
+/**
+ * every: Function takes in an array or object and a callback function. If the callback function returns false for every element,
+ * function returns false; if callback function returns true even once, function returns true. If callback function is not given:
+ * function will return false if all elements are falsey, or true if even one element is truthy.
+ * 
+ * @param { Array or Object } collection: Function takes in an array or object to iterate over.
+ * @param { Function } func: Function takes in a callback function, should return boolean value.
+ * @returns { Boolean }: Function returns true or false, based on conditions described above.
+ */
+function some(collection, test){
+    // if function is not given
+    if (test === undefined){
+        if (Array.isArray(collection)){
+            // for every element, check truthyness
+            for (let i = 0; i < collection.length; i++){
+                if (collection[i]){
+                    return true;
+                }
+            }
+        } else {  // if collection is an object
+            // for every property, check truthyness
+            for (let key in collection){
+                if (collection[key]){
+                    return true;
+                }
+            }
+        }
+
+        // return false if every element is falsey
+        return false;
+    }
+
+    // if collection is an array
+    if (Array.isArray(collection)){
+        // for every element, call test with parameters
+        for (let i = 0; i < collection.length; i++){
+            // if callback returns true, return true
+            if (test(collection[i], i, collection)){
+                return true;
+            }
+        }
+    } else {  // if collection is an object
+        // for every property, call test with parameters
+        for (let key in collection){
+            // if callback returns true, return true
+            if (test(collection[key], key, collection)){
+                return true;
+            }
+        }
+    }
+
+    // return false if none of the above triggered true
+    return false;
+};

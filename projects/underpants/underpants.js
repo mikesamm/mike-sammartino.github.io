@@ -481,6 +481,51 @@ _.every = function(collection, func){
 *   _.some([1,3,5], function(e){return e % 2 === 0}) -> false
 *   _.some([1,2,3], function(e){return e % 2 === 0}) -> true
 */
+_.some = function(collection, test){
+    // if function is not given
+    if (test === undefined){
+        if (Array.isArray(collection)){
+            // for every element, check truthyness
+            for (let i = 0; i < collection.length; i++){
+                if (collection[i]){
+                    return true;
+                }
+            }
+        } else {  // if collection is an object
+            // for every property, check truthyness
+            for (let key in collection){
+                if (collection[key]){
+                    return true;
+                }
+            }
+        }
+
+        // return false if every element is falsey
+        return false;
+    }
+
+    // if collection is an array
+    if (Array.isArray(collection)){
+        // for every element, call test with parameters
+        for (let i = 0; i < collection.length; i++){
+            // if callback returns true, return true
+            if (test(collection[i], i, collection)){
+                return true;
+            }
+        }
+    } else {  // if collection is an object
+        // for every property, call test with parameters
+        for (let key in collection){
+            // if callback returns true, return true
+            if (test(collection[key], key, collection)){
+                return true;
+            }
+        }
+    }
+
+    // return false if none of the above triggered true
+    return false;
+};
 
 
 /** _.reduce
