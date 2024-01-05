@@ -14,8 +14,8 @@
 /**
  * indentity: Function takes in an input value and returns the value unchanged.
  *  
- * @param {*} value: Function takes in any input value.
- * @returns {*} value: Function returns input value unchanged.
+ * @param { * } value: Function takes in any input value.
+ * @returns { * } value: Function returns input value unchanged.
  */
 function identity(value){
     return value;
@@ -26,7 +26,7 @@ module.exports.each = identity;
 /**
  * typeOf: Function takes in an input and returns a string representing the data type of it.
  * 
- * @param {*} value: Function takes in any input value.
+ * @param { * } value: Function takes in any input value.
  * @returns { String }: A string representing the data type of the input value.
  */
 function typeOf(value){
@@ -108,7 +108,7 @@ module.exports.each = last;
  * indexOf: Function takes in an array and a value. If the value exists in the array, the function returns the index of the element. If the value does not exist, -1 is returned.
  * 
  * @param { Array } array: The array being checked for the value.
- * @param {*} value: The value being searched for in the array.
+ * @param { * } value: The value being searched for in the array.
  * @returns { Number } i or -1: Function returns the index of value if it is found or -1 if value is not found.
  */
 function indexOf(array, value){
@@ -128,7 +128,7 @@ module.exports.each = indexOf;
  * contains: Function determines if a value exists in an array, returning a boolean that represents such.
  * 
  * @param { Array } array: The array searched by the function. 
- * @param {*} value: The value being searched for within the array.
+ * @param { * } value: The value being searched for within the array.
  * @returns { Boolean }: Function returns true if value is found, false if value is not found.
  */
 function contains(array, value){
@@ -296,3 +296,26 @@ function map(collection, func){
 };
 
 module.exports.each = map;
+
+/**
+ * pluck: Function takes in an array of objects and property. It plucks the value of the 
+ * property and adds it to an output array.
+ * 
+ * @param { Array } array: Function takes in this array of objects.
+ * @param { * } prop: Property where the value will be plucked from.
+ * @returns { Array } output: Array of plucked values from each object in array.
+ */
+function pluck(array, prop){
+    // output storage
+    let output = [];
+
+    output = _.map(array, function(element){
+        return element[prop];
+    });
+
+    // return output
+    return output;
+};
+
+module.exports.each = pluck;
+
