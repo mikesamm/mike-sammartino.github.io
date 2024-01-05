@@ -319,3 +319,59 @@ function pluck(array, prop){
 
 module.exports.each = pluck;
 
+/**
+ * every: Function takes in an array or object and a callback function. If the callback function returns true for every element,
+ * function returns true; if callback function returns false even once, function returns false. If callback function is not given:
+ * function will return true if all elements are truthy, or false if even one element is falsy.
+ * 
+ * @param { Array or Object } collection: Function takes in an array or object to iterate over.
+ * @param { Function } func: Function takes in a callback function, should return boolean value.
+ * @returns { Boolean }: Function returns true or false, based on conditions described above.
+ */
+function every(collection, func){
+    // if function is not given, return false
+    if (func === undefined){
+        if (Array.isArray(collection)){
+            // for every element, check truthyness
+            for (let i = 0; i < collection.length; i++){
+                if (!collection[i]){
+                    return false;
+                }
+            }
+        } else {  // if collection is an object
+            // for every property, check truthyness
+            for (let key in collection){
+                if (!collection[key]){
+                    return false;
+                }
+            }
+        }
+
+        // return true if every element is truthy
+        return true;
+    }
+
+    // if collection is an array
+    if (Array.isArray(collection)){
+        // for every element, call func with parameters
+        for (let i = 0; i < collection.length; i++){
+            // if callback returns false, return false
+            if (!func(collection[i], i, collection)){
+                return false;
+            }
+        }
+    } else {  // if collection is an object
+        // for every property, call func with parameters
+        for (let key in collection){
+            // if callback returns false, return false
+            if (!func(collection[key], key, collection)){
+                return false;
+            }
+        }
+    }
+
+    // return true if none of the above triggered false
+    return true;
+};
+
+module.exports.each = every;
