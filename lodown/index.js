@@ -266,3 +266,33 @@ function partition(array, test){
 
 module.exports.each = partition;
 
+/**
+ * map: Function take in an array or object, executes a callback function on every element or property, 
+ * and returns an array with the returned values from the callback function.
+ * 
+ * @param { Array or Object } collection: Function takes in a collection (an array or object).
+ * @param { Function } func: Function uses this callback function to act on values from the collection.
+ * @returns { Array } output: Returns an array filled with return values from callback function.
+ */
+function map(collection, func){
+    // make storage array for output
+    let output = [];
+
+    // if array
+    if (Array.isArray(collection)){
+        // call func for each element with args element, index, array
+        for (let i = 0; i < collection.length; i++){
+            output.push(func(collection[i], i, collection));
+        }
+    } else {  // if object
+        // call func for each property with args value, key, object
+        for (let key in collection){
+            output.push(func(collection[key], key, collection));
+        }
+    }
+
+    // return storage array
+    return output;
+};
+
+module.exports.each = map;

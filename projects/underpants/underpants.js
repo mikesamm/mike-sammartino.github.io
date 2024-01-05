@@ -355,14 +355,18 @@ _.map = function(collection, func){
     // make storage array for output
     let output = [];
 
-
     // if array
-        // call func with args element, index, array
-        // use _.each() format
-    // if object
-        // call func with args value, key, object
-        // use _.each() format
-
+    if (Array.isArray(collection)){
+        // call func for each element with args element, index, array
+        for (let i = 0; i < collection.length; i++){
+            output.push(func(collection[i], i, collection));
+        }
+    } else {  // if object
+        // call func for each property with args value, key, object
+        for (let key in collection){
+            output.push(func(collection[key], key, collection));
+        }
+    }
 
     // return storage array
     return output;
