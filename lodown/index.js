@@ -464,3 +464,28 @@ function reduce(array, func, seed){
 };
 
 module.exports.each = reduce;
+
+/**
+ * extend: Function takes in at least one object. Any object after the first is added to 
+ * the first object.
+ * 
+ * @param { Object(s)} object: Function uses this object as the base object.
+ * @returns { Object } object: Function returns the base object with new additions.
+ */
+function extend(object){
+
+    // initialize array from arguments
+    let objectsArr = Array.from(arguments);
+
+    // iterate over ojects argument array
+    for (let i = 0; i < objectsArr.length; i++){
+        // accumulate into object1 each object[i]
+        object = Object.assign(object, objectsArr[i]);
+    
+    }
+
+    // return updated object1
+    return object;
+};
+
+module.exports.each = extend;
