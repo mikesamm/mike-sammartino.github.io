@@ -584,6 +584,27 @@ _.reduce = function(array, func, seed){
 *   _.extend(data, {b:"two"}); -> data now equals {a:"one",b:"two"}
 *   _.extend(data, {a:"two"}); -> data now equals {a:"two"}
 */
+_.extend = function(object1, object2, ...objects){
+    // initialize output object
+    // let newObject = {
+    //     ...object1,
+    //     ...object2
+    // };
+    let newObject = Object.assign({}, object1, object2);
+ // console.log("newObject", newObject);
+    // if there are more than one additional object to be added
+    if (objects.length){
+        // iterate over ojects argument array
+        for (let i = 0; i < objects.length; i++){
+            // accumulate into object1 each object[i]
+            newObject = Object.assign(newObject, objects[i]);
+        }
+    }   
+    // return updated object1
+  //console.log("post-loop newObject", newObject)
+    return newObject;
+};
+
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
