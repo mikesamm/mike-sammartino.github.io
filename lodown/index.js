@@ -430,3 +430,37 @@ function some(collection, test){
     // return false if none of the above triggered true
     return false;
 };
+
+module.exports.each = some;
+
+/**
+ * reduce: Function takes in an array, a function, and a seed number, and returns a number. 
+ * 
+ * @param { Array } array: Function takes in array to iterate over.
+ * @param { Function } func: Function takes this callback function with parameters: (accumulator, current, and index), should return accumulator as a number.
+ * @param { Number } seed: Function takes this seed value, a number, to initialize output or accumulator variable.
+ * @returns { Number } output: Function returns a number,
+ */
+function reduce(array, func, seed){
+    // initialize output with seed
+    let output = seed;
+    // initialize starting point variable
+    let start = 0; 
+
+    // if no seed is given, use first element in collection as seed
+    if (seed === undefined){
+        output = array[0];
+        start = 1;
+    }
+
+    // for every element in colleciton
+    for (let i = start; i < array.length; i++){
+        // invoke callback function
+        output = func(output, array[i], i);
+    }
+
+    // return final output
+    return output;
+};
+
+module.exports.each = reduce;
