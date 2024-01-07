@@ -434,7 +434,7 @@ function some(collection, test){
 module.exports.each = some;
 
 /**
- * reduce: Function takes in an array, a function, and a seed number, and returns a number. The returned number respresents an accumulation of 
+ * reduce: Function takes in an array, a function, and a seed number, and returns a number. The returned number respresents an accumulation.
  * 
  * @param { Array } array: Function takes in array to iterate over.
  * @param { Function } func: Function takes this callback function with parameters: (accumulator, current, and index), should return accumulator as a number.
