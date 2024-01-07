@@ -377,7 +377,7 @@ function every(collection, func){
 module.exports.each = every;
 
 /**
- * every: Function takes in an array or object and a callback function. If the callback function returns false for every element,
+ * some: Function takes in an array or object and a callback function. If the callback function returns false for every element,
  * function returns false; if callback function returns true even once, function returns true. If callback function is not given:
  * function will return false if all elements are falsey, or true if even one element is truthy.
  * 
@@ -434,12 +434,12 @@ function some(collection, test){
 module.exports.each = some;
 
 /**
- * reduce: Function takes in an array, a function, and a seed number, and returns a number. 
+ * reduce: Function takes in an array, a function, and a seed number, and returns a number. The returned number respresents an accumulation of 
  * 
  * @param { Array } array: Function takes in array to iterate over.
  * @param { Function } func: Function takes this callback function with parameters: (accumulator, current, and index), should return accumulator as a number.
  * @param { Number } seed: Function takes this seed value, a number, to initialize output or accumulator variable.
- * @returns { Number } output: Function returns a number,
+ * @returns { Number } output: Function returns a number.
  */
 function reduce(array, func, seed){
     // initialize output with seed

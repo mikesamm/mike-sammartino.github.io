@@ -22,27 +22,30 @@ var _ = require("underbar");  // importing underbar library
  */
 
 var maleCount = function(array) {
-    // initialize counter for male customers
-    let males = 0;
-    // iterate through the input array
-    for (let i = 0; i < array.length; i++){
-        if (array[i]["gender"] === "male"){
-            males++;
-        }
-    }
-    // return male customer counter
-    return males;
+    // use _.filter(array, test) to return an array, test callback must return boolean
+    let males = _.filter(array, function(customer){
+        return customer["gender"] === 'male';
+    });
+    // return number of male customers
+    return males.length;
 };
 
 var femaleCount = function(array){
-    // counter
+    // I: array
+    // O: number
+    // C: use _.reduce(array, func, seed);
+    
+    // number of females
     return _.reduce(array, function(females, customer){
+        // callback checks condition
         if (customer["gender"] === "female"){
+            // callback increments accumulator
             females++;
         }
+        // callback returns accumulator after all iterations in _.reduce() are done
+        return females;
     }, 0);
-    // return female count
-    
+
 };
 
 var oldestCustomer = function(array){
