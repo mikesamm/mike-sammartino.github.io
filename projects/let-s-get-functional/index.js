@@ -49,7 +49,19 @@ var femaleCount = function(array){
 };
 
 var oldestCustomer = function(array){
+    // storage for oldest found customer age, and oldest customer name
+    let oldestAge = 0, oldestName = '';
 
+    // use filter() to return the oldest customer element?
+    // loop through array
+    for (let i = 0; i < array.length; i++){
+        if (array[i]["age"] > oldestAge){
+            oldestAge = array[i]["age"];
+            oldestName = array[i]["name"];
+        }
+    }
+    // return oldest name
+    return oldestName;
 };
 
 var youngestCustomer;
