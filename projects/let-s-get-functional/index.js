@@ -144,7 +144,16 @@ var friendFirstLetterCount = function(array, customer, letter){
     }, 0);
 };
 
-var friendsCount;
+var friendsCount = function(array, name){
+    // if name is in a customer's friends list, add to output array
+
+    // array[i] would be customer
+    // array[i].friends would be customer's friend's list
+        // search here for name and push() array[i] into output
+
+    // use filter() with contains()
+    return array;
+};
 
 var topThreeTags;
 

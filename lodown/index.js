@@ -133,7 +133,7 @@ module.exports.each = indexOf;
  * @returns { Boolean }: Function returns true if value is found, false if value is not found.
  */
 function contains(array, value){
-    // use array method includes in ternary format
+    // use array method includes() in ternary format
     return array.includes(value) ? true : false;
 };
 
