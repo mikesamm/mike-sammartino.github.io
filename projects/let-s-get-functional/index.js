@@ -42,31 +42,78 @@ var femaleCount = function(array){
             // callback increments accumulator
             females++;
         }
-        // callback returns accumulator after all iterations in _.reduce() are done
+        // callback returns accumulator
         return females;
     }, 0);
 
 };
 
 var oldestCustomer = function(array){
-    // storage for oldest found customer age, and oldest customer name
-    let oldestAge = 0, oldestName = '';
+    // storage for oldest found customer age, and oldest customer name, and index of that element
+    let oldestAge = 0, oldestName = '', oldestNameIndex;
 
-    // use filter() to return the oldest customer element?
+    // use pluck() to get an array of ages
+    let ages = _.pluck(array, "age");
+
     // loop through array
-    for (let i = 0; i < array.length; i++){
-        if (array[i]["age"] > oldestAge){
-            oldestAge = array[i]["age"];
-            oldestName = array[i]["name"];
+    for (let i = 0; i < ages.length; i++){
+        if (ages[i] > oldestAge){
+            oldestAge = ages[i];
+            oldestNameIndex = i;
         }
     }
+    oldestName = array[oldestNameIndex]["name"];
+    
     // return oldest name
     return oldestName;
 };
 
-var youngestCustomer;
+var youngestCustomer = function(array){
+    // storage for youngest found customer age, and youngest customer name, and index of that element
+    let youngestAge = 150, youngestName = '', youngestNameIndex;
 
-var averageBalance;
+    // use pluck() to get an array of ages
+    let ages = _.pluck(array, "age");
+
+    // loop through array
+    for (let i = 0; i < ages.length; i++){
+        if (ages[i] < youngestAge){
+            youngestAge = ages[i];
+            youngestNameIndex = i;
+        }
+    }
+    youngestName = array[youngestNameIndex]["name"];
+    
+    // return youngest name
+    return youngestName;
+};
+
+var averageBalance = function(array){
+    // average storage variable
+    let avg = 0;
+    // pluck() the balances to an array
+    let balanceStrings = _.pluck(array, "balance");
+
+    // turn balance strings into numbers, use map()
+    let balanceNums = _.map(balanceStrings, function(string){
+        // slice() '$' and '.' out of the strings
+        let preNum = string.slice(1, 2) + string.slice(3);
+        // convert number to number type and return
+        let number = Number(preNum);
+        return number;
+    });
+
+    // reduce() the array into a sum
+    let sumAllBalances = _.reduce(balanceNums, function(accum, current){
+        accum += current;
+        return accum;
+    }, 0);
+
+    // divide the sum by length of the array
+    avg = sumAllBalances / array.length;
+    // return average
+    return avg;
+};
 
 var firstLetterCount;
 
