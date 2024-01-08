@@ -125,7 +125,23 @@ var firstLetterCount = function(array, letter){
 };
 
 var friendFirstLetterCount = function(array, customer, letter){
-    
+    // use customer to find index
+    let customerIndex;
+    // loop through array and find customer name
+    for (let i = 0; i < array.length; i++){
+        if (array[i].name === customer){
+            customerIndex = i;
+        }
+    }
+    // establish friend array path
+    let friendArray = array[customerIndex].friends;
+
+    return _.reduce(friendArray, function(firstLetters, friend){
+        if (friend.name[0].toUpperCase() === letter.toUpperCase()){
+            firstLetters++;
+        }
+        return firstLetters;
+    }, 0);
 };
 
 var friendsCount;
