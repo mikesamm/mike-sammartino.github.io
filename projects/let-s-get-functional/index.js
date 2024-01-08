@@ -34,7 +34,6 @@ var femaleCount = function(array){
     // I: array
     // O: number
     // C: use _.reduce(array, func, seed);
-    
     // number of females
     return _.reduce(array, function(females, customer){
         // callback checks condition
@@ -115,9 +114,19 @@ var averageBalance = function(array){
     return avg;
 };
 
-var firstLetterCount;
+var firstLetterCount = function(array, letter){
+    // use reduce to return a number with all names beginning with letter
+    return _.reduce(array, function(firstletter, customer){
+        if (customer.name[0].toUpperCase() === letter.toUpperCase()){
+            firstletter++;
+        }
+        return firstletter;
+    }, 0);
+};
 
-var friendFirstLetterCount;
+var friendFirstLetterCount = function(array, customer, letter){
+    
+};
 
 var friendsCount;
 
