@@ -145,19 +145,37 @@ var friendFirstLetterCount = function(array, customer, letter){
 };
 
 var friendsCount = function(array, name){
-    // if name is in a customer's friends list, add to output array
+    // loop through array and THEN use filter
+  
+    // output array
+    let customerObjs = [];
+  
+    // loop through array
+    // each customer
+    for (let i = 0; i < array.length; i++){
+      // use map to test friends array and THEN push customer to output array
+      // each friend
+      _.map(array[i].friends, function(friend){
+          // if friends name is equal to name
+          if(friend.name === name){
+            // push the name of the customer to output array
+            // console.log(array[i].name)
+            customerObjs.push(array[i].name);
+          } 
+          return;
+      });
+    }
+    // console.log("after loop customerObjs", customerObjs)
+    return customerObjs;
+  };
 
-    // array[i] would be customer
-    // array[i].friends would be customer's friend's list
-        // search here for name and push() array[i] into output
+var topThreeTags = function(array){
 
-    // use filter() with contains()
-    return array;
 };
 
-var topThreeTags;
+var genderCount = function(array){
 
-var genderCount;
+};
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
