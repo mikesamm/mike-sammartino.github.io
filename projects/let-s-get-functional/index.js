@@ -155,7 +155,7 @@ var friendsCount = function(array, name){
     for (let i = 0; i < array.length; i++){
       // use map to test friends array and THEN push customer to output array
       // each friend
-      _.map(array[i].friends, function(friend){
+      _.each(array[i].friends, function(friend){
           // if friends name is equal to name
           if(friend.name === name){
             // push the name of the customer to output array
@@ -169,8 +169,26 @@ var friendsCount = function(array, name){
     return customerObjs;
   };
 
-var topThreeTags = function(array){
+// Find the three most common tags among all customers' associated tags
+var topThreeTags = function(array){  // customer array as input
+    
+    // make giant array of all of the tags
+        // access the customers[i].tags property
+    let allTags = [];
+    for (let i = 0; i < array.length; i++){
+        // loop through customer's tags
+        let tagArr = array[i].tags
+        for (let j = 0; j < tagArr.length; j++){
+            allTags.push(tagArr[j]);
+        }
+    }
 
+    // make objects for each individual tag
+        // include tagName and count properties
+
+    // order the array by count, highest count first
+
+    // return array of the top three tags, using _.first()
 };
 
 var genderCount = function(array){
