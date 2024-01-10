@@ -59,9 +59,14 @@ function reverseArray(array) {
 function reverseArrayInPlace(array) {
   // careful about overwriting memory, need to swap values
   
+  // edge case
+  if (array.length === 0){
+    return array;
+  }
+
   // loop through half the array
   let halfway = Math.floor(array.length / 2);
-  
+
   for (let i = 0; i <= halfway; i++){
     // temp swap container
     let swap = array[i];
@@ -71,8 +76,7 @@ function reverseArrayInPlace(array) {
   }
 
   // return modified array
-  // console.log(array);
-  return array;
+  // return array;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
