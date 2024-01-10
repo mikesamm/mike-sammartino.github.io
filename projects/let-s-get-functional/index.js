@@ -171,25 +171,51 @@ var friendsCount = function(array, name){
 
 // Find the three most common tags among all customers' associated tags
 var topThreeTags = function(array){  // customer array as input
-    
-    // make giant array of all of the tags
-        // access the customers[i].tags property
+
+    // make giant array of all of the tags used by every customer
     let allTags = [];
+
     for (let i = 0; i < array.length; i++){
         // loop through customer's tags
         let tagArr = array[i].tags
         for (let j = 0; j < tagArr.length; j++){
-            allTags.push(tagArr[j]);
+          // push each tag to allTags array
+          allTags.push(tagArr[j]);
         }
     }
-
-    // make objects for each individual tag
+  
+    // make array of unique tags
+    let uniqueTags = _.unique(allTags);
+  
+    // make objects for each individual tag, store in new array
+    let uniqueTagObjs = _.map(uniqueTags, function(tag){
         // include tagName and count properties
-
-    // order the array by count, highest count first
-
+      return { name: tag, count: 1 };
+    });
+  
+    // find how many times a tag is used, store in object.count
+    // loop through uniqueTagObjs
+    for (let i = 0; i < uniqueTagObjs.length; i++){
+      // every uniqueTagObjs[i], reduce is called
+      uniqueTagObjs[i].count = _.reduce(allTags, function(accum, tag){
+        // reduce callback adds to accumulator if passed in tag from allTags matches object.name
+        // accumulates how many times tag is listed
+        if (tag === uniqueTagObjs[i].name){
+          accum += 1;
+        }
+        return accum;
+      }, 0);
+    }
+  
+    // sort array of uniquetagObjs by their count property
+    uniqueTagObjs.sort(function(a, b){ return b.count - a.count });
+  
     // return array of the top three tags, using _.first()
-};
+    let mostUsed = _.first(uniqueTagObjs, 3);
+  
+    // return an array of strings by plucking the top 3 tag object names 
+    return _.pluck(mostUsed, 'name');
+  };
 
 var genderCount = function(array){
 
