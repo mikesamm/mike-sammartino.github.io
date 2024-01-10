@@ -217,9 +217,27 @@ var topThreeTags = function(array){  // customer array as input
     return _.pluck(mostUsed, 'name');
   };
 
-var genderCount = function(array){
-
-};
+  var genderCount = function(array){
+    // create output object
+    let genders = {};
+  
+    genders.male = 0;
+    genders.female = 0;
+    genders["non-binary"] = 0;
+  
+    // use reduce method three times, once for each property
+    for (let key in genders){
+      genders[key] = _.reduce(array, function(count, customer){
+        if (customer["gender"] === key){
+          count++;
+        }
+        return count;
+      }, 0);
+    }
+  
+    // return genders object
+    return genders;
+  };
 
 //////////////////////////////////////////////////////////////////////
 // DON'T REMOVE THIS CODE ////////////////////////////////////////////
