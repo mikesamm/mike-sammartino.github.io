@@ -95,10 +95,10 @@ var averageBalance = function(array){
 
     // turn balance strings into numbers, use map()
     let balanceNums = _.map(balanceStrings, function(string){
-        // slice() '$' and '.' out of the strings
-        let preNum = string.slice(1, 2) + string.slice(3);
-        // convert number to number type and return
-        let number = Number(preNum);
+        // replace '$' and '.' with empty char
+        let preNum = string.replace(/[$,]/g, "");
+        // convert string-number to number type and return
+        let number = parseFloat(preNum);
         return number;
     });
 
