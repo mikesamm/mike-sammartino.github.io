@@ -67,7 +67,7 @@ function reverseArrayInPlace(array) {
   // loop through half the array
   let halfway = Math.floor(array.length / 2);
 
-  for (let i = 0; i <= halfway; i++){
+  for (let i = 0; i < halfway; i++){
     // temp swap container
     let swap = array[i];
     
@@ -76,7 +76,7 @@ function reverseArrayInPlace(array) {
   }
 
   // return modified array
-  // return array;
+  return array;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
