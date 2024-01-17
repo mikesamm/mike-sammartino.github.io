@@ -157,9 +157,36 @@ function nth(list, num) {
 ////////////////////////////////////////////////////////////////////////////////
 // deepEqual ///////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
+// compare two complex pieces of data, see if they're equal
+function deepEqual(x, y){
+  // if values are simple and equal
+  if (typeof x !== 'object' && typeof y !== 'object'){
+    return x === y;
+  }
+  // if one of x or y is complex and other is simple
+  if (typeof x !== 'object' || typeof y !== 'object'){
+    return false;
+  }
+  // create arrays containing the keys of each input object
+  let xKeys = Object.keys(x);
+  let yKeys = Object.keys(y);
 
-function deepEqual() {
+  // if the number of keys differs between objects
+  if (xKeys.length !== yKeys.length){
+    return false;
+  }
 
+  // iterate through arrays and compare keys and values
+  for (let i = 0; i < xKeys.length; i++){
+    if (!yKeys.includes(xKeys[i]) || !deepEqual(x[xKeys[i]], y[xKeys[i]])){
+      // if xKeys[i] doesn't exist in yKeys, return false -OR-
+      // if values of each object at key[i] ARE NOT equal
+      return false;
+    }
+  }
+
+  // if all the above conditions did not trigger a false or early true return...
+  return true;
 }
 
 ////////////////////////////////////////////////////////////////////////////////
