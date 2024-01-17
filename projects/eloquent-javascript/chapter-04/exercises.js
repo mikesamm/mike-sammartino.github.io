@@ -143,12 +143,15 @@ function prepend(element, list) {
 ////////////////////////////////////////////////////////////////////////////////
 
 function nth(list, num) {
-  // // base case 
-  // if (num === 0){
-  //   return list.value;
-  // }
-  // // recursion
-  // return nth(list.rest, num - 1);
+  // base case 
+  if (num < 0){
+    return undefined;
+  } else if (num === 0){
+    return list.value;
+  }
+
+  // recursion
+  return nth(list.rest, num - 1);
 }
 
 ////////////////////////////////////////////////////////////////////////////////
