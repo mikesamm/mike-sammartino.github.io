@@ -1,24 +1,55 @@
 // /////////////////////////////////////////////////////////////////////////////
 // flatten /////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
-
-function flatten() {
-
+// flatten an array of arrays into one single array
+// i: array of arrays
+// o: single arrays
+// c: use reduce() and concat()
+function flatten(arr) {
+  // use reduce() with concat() inside callback func
+  return arr.reduce(function(accum, current){
+    accum = accum.concat(current);
+    return accum;
+  }, []);
 }
 
 // /////////////////////////////////////////////////////////////////////////////
 // loop ////////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
-
-function loop() {
-
+// i: value, test function, update function, body function
+// o: none
+// c: use for loop in loop() body
+function loop(val, test, update, body) {
+  // val is intial value of i
+  // test will be stop condition 
+  // update will determine how counter updates
+  for (let i = val; test(i); i = update(i)){
+    // body executes each loop 
+    body(i);
+  }
 }
 
 // /////////////////////////////////////////////////////////////////////////////
 // every ///////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
+// i: array and predicate function
+// o: true or false if all elements pass predicate test
+// c: use some() array method
+function every(arr, test) {
+  // base case 
+  // if every element of arr passes the test
+  if (arr.length === 0){
+    return true;
+  }
 
-function every() {
+  // recursion
+  // if at least one of the elments passes the test in arr
+  if (arr.some(test)){
+    // test the next slice of arr
+    return every(arr.slice(1), test);
+  } else {  // if none pass, return false
+    return false;
+  }
 
 }
 
