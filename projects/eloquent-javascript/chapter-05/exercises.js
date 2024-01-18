@@ -4,6 +4,9 @@
 // flatten an array of arrays into one single array
 // i: array of arrays
 // o: single arrays
+
+// const { characterScript } = require("./helpers");
+
 // c: use reduce() and concat()
 function flatten(arr) {
   // use reduce() with concat() inside callback func
@@ -56,9 +59,34 @@ function every(arr, test) {
 // /////////////////////////////////////////////////////////////////////////////
 // dominantDirection ///////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
+// i: string
+// o: dominnant direction: rtl, ltr, or ttb
+// c: use characterScript() and countBy()
+function dominantDirection(str) {
+  // dominant direction output and counter
+  let domDir, dirCount = 0;
 
-function dominantDirection() {
+  // split str into array to then use array methods
+  let arr = str.split('');
 
+  // make array of all the script objects that apply to the chars
+  let charScripts = arr.map(function(char){
+    return characterScript(char.codePointAt(0));
+    
+  }).filter((char) => char)  // filter out null objects
+  console.log(charScripts);
+
+  // use countBy to make objects out of each directions
+  let dirCounts = countBy(charScripts, (char) => char.direction);
+  console.log(dirCounts);
+
+  // find largest count of writing direction, return it as dominant direction
+  for (let dir of dirCounts){
+    if (dir.count > dirCount){
+      domDir = dir.name;
+    }
+  }
+  return domDir;
 }
 
 // /////////////////////////////////////////////////////////////////////////////
