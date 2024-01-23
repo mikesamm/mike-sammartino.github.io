@@ -90,4 +90,16 @@ console.log(morningPets);  // "You have to pet the cat 7 times or else it will b
 
 /* 5. How do we specify inputs and outputs?
 
+functions can optionally take inputs and optionally return a single value
+*/
+
+/* 6. Scope
+
+functions can see and modify variables in parent or global scope but not the other way around
+*/
+
+
+/* 7. Closures
+
+functions form closures around the data they house. if an object returned from the function and is held in memory somehwere (referenced), that closure stays ALIVE, and data can continue to exist in these closures
 */
