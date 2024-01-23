@@ -43,11 +43,18 @@ MAGIC_NUMBER = 42;  // MAGIC_NUMBER *cannot* be reassigned because it is a const
 *
 */
 
-// `var` has been part of the JavaScript language since its beginnings. It has some caveats when using it to declare variables, so in 2015 when ES6 came out, `let` and `const` were introduced. 
+/**
+* `var` has been part of the JavaScript language since its beginnings. It has some caveats when using it 
+* to declare variables, so in 2015 when ES6 came out, `let` and `const` were introduced. 
+*
+* const is used when the value in a variable should not and will not be changed in a program, const 
+* CANNOT be reassigned.
+*
+* var and let can both be reassigned, but behavior and rules with scope and hoisting differ between the 
+* two. 
+*/
 
-// const is used when the value in a variable should not and will not be changed in a program, const CANNOT be reassigned.
 
-// var and let can both be reassigned, but behavior and rules with scope and hoisting differ between the two. 
 
 // 3. Hoisting 
 
