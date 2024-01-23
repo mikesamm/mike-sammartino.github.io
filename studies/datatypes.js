@@ -144,21 +144,21 @@ when a variable that is bound to a primitive value, is referenced by another var
 */
 
 var original = 2;
-var new = original;
+var other = original;
 
 console.log(original);  // 2
-console.log(new);  // 2
+console.log(other);  // 2
 
 // At this point, whenever one of those variables is acted upon, the other will not change. 
 
 var original = 2;
-var new = original;
+var other = original;
 
 original += 3
-new *= 3;
+other *= 3;
 
 console.log(original);  // 5
-console.log(new);  // 6
+console.log(other);  // 6
 
 /*
 #### Copy by reference
@@ -173,12 +173,10 @@ console.log(extraNumbers);  // [1, 2, 3, 4]
 
 // At this point, whenever one of those variables is acted upon, the other will change. Both variables point to the same address in memory: whatever is stored at that address will change when either variable is modified, because both variables will act upon that address in memory.
 
-let numbers = [1, 2, 3, 4];
-let extraNumbers = numbers;
+numbers = [1, 2, 3, 4];
+extraNumbers = numbers;
 
-extraNumbers.push(5, 6, 7, 8)
+extraNumbers.push(5, 6, 7, 8);
 
 console.log(numbers);  // [1, 2, 3, 4, 5, 6, 7, 8]
 console.log(extraNumbers);  // [1, 2, 3, 4, 5, 6, 7, 8]
-
-*/
