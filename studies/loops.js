@@ -103,8 +103,8 @@ function animalResidents(){
         console.log(environment, animalKingdom[environment]);
     }
 }
-animalResidents(); // prints to console:   'tropical rain forest' ['jaguar', 'gorilla', 'anaconda'],
-//                                         'arctic tundra' ['mountain goat', 'caribou', 'snowy owl'],
+animalResidents(); // prints to console:   'tropical rain forest' ['jaguar', 'gorilla', 'anaconda']
+//                                         'arctic tundra' ['mountain goat', 'caribou', 'snowy owl']
 //                                         'temperate grasslands' ['bison', 'prairie dogs', 'coyotes']
 
 /*
