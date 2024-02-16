@@ -13,34 +13,36 @@
 
 // Assignment
 
-/**
- * These operators assign values to variables.
+/* 
+These operators assign values to variables.
 
-| Operator | Action                          | Example |
-| -------- | ------------------------------- | ------- |
-| =        | assignment                      |         |
-| +=       | assignment-addition combo       |         |
-| -=       | assignment-subtraction combo    |         |
-| \*=      | assignment-multiplication combo |         |
-| /=       | assignment-division combo       |         |
-| %=       | assignment-modulo combo         |         |
+| Operator | Action                          | Example   | Example Result        |
+| -------- | ------------------------------- | --------- | --------------------- |
+| =        | assignment                      | num = 5   | // num is assigned 5  |
+| +=       | assignment-addition combo       | num += 2  | // num is assigned 7  |
+| -=       | assignment-subtraction combo    | num -= 3  | // num is assigned 4  |
+| \*=      | assignment-multiplication combo | num \*= 4 | // num is assigned 16 |
+| /=       | assignment-division combo       | num /= 2  | // num is assigned 8  |
+| %=       | assignment-modulo combo         | num %= 2  | // num is assigned 0  |
 
- */
+*/
 
 // Arithmetic
 
-/**
- * These operators perform arithmetic operations on data.
-| Operator | Action             | Example |
-| -------- | ------------------ | ------- |
-| +        | addition           |         |
-| -        | subtraction        |         |
-| \*       | multiplication     |         |
-| /        | division           |         |
-| %        | modulo (remainder) |         |
-| ++       | increment by one   |         |
-| --       | decrement by one   |         |
-| **       | exponentiation     |         |
+/*
+These operators perform arithmetic operations on data.
+
+| Operator | Action             | Example   | Example Results, let num = 5; |
+| -------- | ------------------ | --------- | ----------------------------- |
+| +        | addition           | num + 6   | // resolves to 11             |
+| -        | subtraction        | num - 5   | // resolves to 6              |
+| *        | multiplication     | num * 8   | // resolves to 48             |
+| /        | division           | num / 4   | // resolves to 12             |   
+| %        | modulo (remainder) | num % 2   | // resolves to 0              |
+| ++       | increment by one   | num++     | // resolves to 1              |
+| --       | decrement by one   | num--     | // resolves to 0              |
+| **       | exponentiation     | num ** 2  | // resolves to 1              |
+
  */
 
 // Comparison
