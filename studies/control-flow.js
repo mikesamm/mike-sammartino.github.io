@@ -62,19 +62,37 @@ if (num > 100){
 
 /* switch
 
-Sometimes an if, else if chain of statements can get long and cumbersome. If there are multiple tests for a single variable and each test triggers different code blocks, a switch statement can be used to streamline code. 
+Sometimes an if, else if chain of statements can get long and cumbersome. If there are multiple tests for a single expression and each test triggers different code blocks, a switch statement can be used to streamline code. Sometimes two different expressions may trigger the same statement as well, which is something a switch statement can handle. 
 */
 
-let num = -6;
+let make = "Toyota";
 
-if (num > 100){
-    console.log('large number');
-} else if (num > 50){
-    console.log('medium number');
-} else if (num > 10){
-    console.log('small number');
-} else if (num >= 0){
-    console.log('tiny number');
-} else {
-    console.log("negative number");
+switch (make){
+    case "Volkswagen":
+        console.log("Made in Germany");
+        break;
+    case "Hyundai":
+    case "Kia":
+        console.log("Made in South Korea");
+        break;
+    case "Toyota":
+    case "Honda":
+    case "Nissan":
+        console.log("Made in Japan");
+        break;
+    case "Chevrolet":
+    case "Ford":
+        console.log("Made in USA");
+        break;
+    default:
+        console.log("Made somewhere else")
 }
+// prints "Made in Japan"
+
+/* 
+In the above example, make is the expression being tested. There are many possible blocks of code that can run depending on which case is true. Some cases share the same statements, like "Hyundai" and "Kia". If the expression resolves to either of those strings, "Made in South Korea" will print to the console.
+
+The default case at the end of the case list serves as a catch-all, similar to the else keyword. If no cases are triggered, the default case statement will execute.
+
+The break keyword is needed to stop any following cases from evaluating or statements from executing. In the above example, if the break keyword under the "Toyota" case did not exist, the next statement under "Chevrolet" and "Ford" would execute as well. "Made in Japan" and "Made in USA" would both print to the console since the "Toyota" case was the first to evaluate to true and the first break statement after that was under the "Ford" case.
+*/
