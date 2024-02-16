@@ -24,20 +24,20 @@ if (string === 'banana'){
 Sometimes there are a few conditions to be tested before a block of can execute. Conditions can be chained one after another in an 'if, else if, else if ... ' fashion. Whichever condition is passed first, the block of code associated with it will execute.
 */
 
-let num = 20;
+let num1 = 20;
 
-if (num > 100){
+if (num1 > 100){
     console.log('large number');
-} else if (num > 50){
+} else if (num1 > 50){
     console.log('medium number');
-} else if (num > 10){
+} else if (num1 > 10){
     console.log('small number');
-} else if (num >= 0){
+} else if (num1 >= 0){
     console.log('tiny number');
 }
 // prints to console: 'small number'
 
-/* The order of the statements is important. In the above example, if the condition (num > 0) came before (num > 10), the console would have read 'tiny number'. The condition evaluated true, but the intended effect did not happen because the first condition that evaluated as true was not the one we intended to be true. 
+/* The order of the statements is important. In the above example, if the condition (num1 > 0) came before (num1 > 10), the console would have read 'tiny number'. The condition evaluated true, but the intended effect did not happen because the first condition that evaluated as true was not the one we intended to be true. 
 */
 
 /* else
@@ -45,15 +45,15 @@ if (num > 100){
 Blocks of code in an if, else if chain will only execute if one of the conditions evalutes to true. If none of the conditions pass, then no code executes. As a catch-all statement, the code in an else block will execute if none of the other conditions evaluate to true.
 */
 
-let num = -6;
+let num2 = -6;
 
-if (num > 100){
+if (num2 > 100){
     console.log('large number');
-} else if (num > 50){
+} else if (num2 > 50){
     console.log('medium number');
-} else if (num > 10){
+} else if (num2 > 10){
     console.log('small number');
-} else if (num >= 0){
+} else if (num2 >= 0){
     console.log('tiny number');
 } else {
     console.log("negative number");
