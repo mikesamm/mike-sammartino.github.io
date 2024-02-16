@@ -32,7 +32,7 @@ if (num > 100){
     console.log('medium number');
 } else if (num > 10){
     console.log('small number');
-} else if (num > 0){
+} else if (num >= 0){
     console.log('tiny number');
 }
 // prints to console: 'small number'
@@ -42,5 +42,39 @@ if (num > 100){
 
 /* else
 
-Blocks of code in an if, else if chain will only execute if one of the conditions evalutes to true. If none of the conditions pass, then no code executes. As 
+Blocks of code in an if, else if chain will only execute if one of the conditions evalutes to true. If none of the conditions pass, then no code executes. As a catch-all statement, the code in an else block will execute if none of the other conditions evaluate to true.
 */
+
+let num = -6;
+
+if (num > 100){
+    console.log('large number');
+} else if (num > 50){
+    console.log('medium number');
+} else if (num > 10){
+    console.log('small number');
+} else if (num >= 0){
+    console.log('tiny number');
+} else {
+    console.log("negative number");
+}
+// prints to console: 'negative number'
+
+/* switch
+
+Sometimes an if, else if chain of statements can get long and cumbersome. If there are multiple tests for a single variable and each test triggers different code blocks, a switch statement can be used to streamline code. 
+*/
+
+let num = -6;
+
+if (num > 100){
+    console.log('large number');
+} else if (num > 50){
+    console.log('medium number');
+} else if (num > 10){
+    console.log('small number');
+} else if (num >= 0){
+    console.log('tiny number');
+} else {
+    console.log("negative number");
+}
