@@ -47,54 +47,60 @@ These operators perform arithmetic operations on data.
 
 // Comparison
 
-/**
- * These operators resolve to a boolean, comparing two pieces of data.
-| Operator | Action                   | Example |
-| -------- | ------------------------ | ------- |
-| ===      | strictly equals          |         |
-| \==      | loosely equals           |         |
-| >=       | greater than or equal to |         |
-| <=       | less than or equal to    |         |
-| >        | greater than             |         |
-| <        | less than                |         |
-| !==      | not strictly equal       |         |
-| !=       | not loosely equal        |         |
- */
+/*
+These operators resolve to a boolean, comparing two pieces of data.
+| Operator | Action                   | Example     | Example Results, let num = 5 |
+| -------- | ------------------------ | ----------- | ---------------------------- |
+| ===      | strictly equals          | '1' === 1   | false                        |
+| \==      | loosely equals           | '1' == 1    | true                         |
+| >=       | greater than or equal to | 3 >= 1      | true                         |
+| <=       | less than or equal to    | 3 <= 1      | false                        |
+| >        | greater than             | 3 > num     | false                        |
+| <        | less than                | 3 < num     | true                         |
+| !==      | not strictly equal       | num !== num | false                        |
+| !=       | not loosely equal        | num != 2    | true                         | 
+
+*/
 
 // Logical
 
-/**
- * These operators help structure the logic of statements.
-| Operator | Action | Example |
-| -------- | ------ | ------- |
-| &&       | AND    |         |
-| OR       | OR     |         |
- */
+/*
+These operators help structure the logic of statements.
+| Operator | Action | Example                     | Example Results                                          |
+| -------- | ------ | --------------------------- | -------------------------------------------------------- |
+| &&       | AND    | if (1 === 1 && 'a' === 'a') | true // the code block after this statement will execute |
+| OR       | OR     | if (1 === 1 || 'a' === 'b') | true // the code block after this statement will execute |
+
+*/
 
 // Unary
 
-/**
- * These operators act on one piece of data and return something else
-| Operator | Action                           | Example |
-| -------- | -------------------------------- | ------- |
-| !        | NOT                              |         |
-| typeof   | returns the data type of operand |         |
-| -        | not sure yet                     |         |
- */
+/*
+These operators act on one piece of data and return something else
+| Operator | Action                           | Example               | Example Results, , let x = true |
+| -------- | -------------------------------- | --------------------- | ------------------------------- |
+| !        | NOT                              | !x                    | false                           |
+| typeof   | returns the data type of operand | typeof x              | boolean                         |
+| -        | not sure yet                     |                       | 
 
+*/
 // Ternary
 
-/**
- * a ? b : c
+/*
+a ? b : c
 This operator returns certain operands if first operand evaluates to true.
 
 Format: a ? b : c
-Understand as: "if a is true, return b, and if a is not true, return c"
+Understand as: "if a is true, return b, or if a is false, return c"
 
 Examples:
+
 42 > 8 ? true : false  // true
 
+---------------------------------------
 let string = "Holy Cow";
-string === "Holy Pig" ? "The pig is holy." : "The pig is not holy." // "The pig is not holy."  
 
- */
+string === "Holy Pig" ? "The pig is holy." : "The pig is not holy." // "The pig is not holy."  
+|------- a ---------|   |----- b --------|   |------ c -----------|    |- returned c -------|
+
+*/
