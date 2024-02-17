@@ -6,8 +6,8 @@
  * 1. Assignment: = += -= /= *=
  * 2. Arithmetic: + - / * %
  * 3. Comparison: === !== == != < > =< >=
- * 4. Logical: && ||
- * 5. Unary: typeof ...
+ * 4. Logical: && || !
+ * 5. Unary: !, typeof, -
  * 6. Ternary / Conditional: (a ? b : c)
  */
 
@@ -16,7 +16,7 @@
 /* 
 These operators assign values to variables.
 
-| Operator | Action                          | Example   | Example Result        |
+| Operator | Action                          | Example   | Results               |
 | -------- | ------------------------------- | --------- | --------------------- |
 | =        | assignment                      | num = 5   | // num is assigned 5  |
 | +=       | assignment-addition combo       | num += 2  | // num is assigned 7  |
@@ -32,7 +32,7 @@ These operators assign values to variables.
 /*
 These operators perform arithmetic operations on data.
 
-| Operator | Action             | Example   | Example Results, let num = 5; |
+| Operator | Action             | Example   | Results, let num = 5;         |
 | -------- | ------------------ | --------- | ----------------------------- |
 | +        | addition           | num + 6   | // resolves to 11             |
 | -        | subtraction        | num - 5   | // resolves to 6              |
@@ -49,7 +49,7 @@ These operators perform arithmetic operations on data.
 
 /*
 These operators resolve to a boolean, comparing two pieces of data.
-| Operator | Action                   | Example     | Example Results, let num = 5 |
+| Operator | Action                   | Example     | Results, let num = 5         |
 | -------- | ------------------------ | ----------- | ---------------------------- |
 | ===      | strictly equals          | '1' === 1   | false                        |
 | \==      | loosely equals           | '1' == 1    | true                         |
@@ -66,7 +66,7 @@ These operators resolve to a boolean, comparing two pieces of data.
 
 /*
 These operators help structure the logic of statements.
-| Operator | Action | Example                     | Example Results                                          |
+| Operator | Action | Example                     | Results                                                  |
 | -------- | ------ | --------------------------- | -------------------------------------------------------- |
 | &&       | AND    | if (1 === 1 && 'a' === 'a') | true // the code block after this statement will execute |
 | OR       | OR     | if (1 === 1 || 'a' === 'b') | true // the code block after this statement will execute |
@@ -77,11 +77,11 @@ These operators help structure the logic of statements.
 
 /*
 These operators act on one piece of data and return something else
-| Operator | Action                           | Example               | Example Results, , let x = true |
+| Operator | Action                           | Example               | Results, let x = true, a = 2    |
 | -------- | -------------------------------- | --------------------- | ------------------------------- |
 | !        | NOT                              | !x                    | false                           |
 | typeof   | returns the data type of operand | typeof x              | boolean                         |
-| -        | not sure yet                     |                       | 
+| -        | negates a number                 | -a                    | -2
 
 */
 // Ternary
