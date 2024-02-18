@@ -95,7 +95,7 @@ Understand as: "if a is true, return b, or if a is false, return c"
 
 Examples:
 
-42 > 8 ? true : false  // true
+return 42 > 8 ? true : false  // true
 
 ---------------------------------------
 let string = "Holy Cow";
