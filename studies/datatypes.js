@@ -51,6 +51,10 @@ A string represents text, a sequence of characters. Most anything can be a strin
 Strings are immutable, which means they cannot be mutated in place. Strings can be reassigned to new strings, however, and string methods will return new strings after acting upon the original. 
 */
 
+let string = "The garden will be planted in spring.";
+let string2 = '409858';
+console.log(typeof string2); // prints 'string' to console
+
 
 /* 3. Boolean
 
@@ -60,6 +64,9 @@ typeof return value -> "boolean"
 As a logical data type, a boolean can only be either `true` or `false`. They are used in control flow operations like if/else statements and in conditional operations like comparing two values for strict equality. 
 */
 
+let boolean = true;
+boolean = false;
+console.log(boolean); // prints `false` to console
 
 /* 4. Array
 
@@ -67,8 +74,30 @@ Complex
 typeof return value -> "object"
 Array.isArray(-input-) -> returns true or false if input is an array
 
-Arrays are ordered collections of data, storing many values in a single variable. They are indexed starting at `0`, meaning that each element in the array can be accessed or referenced with a number. 
+Arrays are ordered collections of data, storing many values in a single variable. They are indexed starting at `0`, meaning that each element in the array can be accessed or referenced with a number. Arrays can contain other complex data types like objects and arrays.
 */
+
+let sample = [1, 2, 3, 4, 5];
+let example = [1, true, 'test', null];
+let nested = [42, [3, 4, 5], [6, 7, [8]], [34, 35]];
+let bigExample = [
+    {
+        name: 'Mike',
+        hasPet: true
+    },
+    {
+        name: 'Jen',
+        hasPet: true
+    },
+    {
+        name: 'Jake',
+        hasPet: false
+    },
+    {
+        name: 'Victor',
+        hasPet: true
+    },
+];
 
 
 /* 5. Object
@@ -85,9 +114,8 @@ function instanceof Object -> true
 
 Functions are reusable blocks of code. They can take in values and return new values. They are essentially small programs in themselves. Functions can be declared with a name, optional parameters, and optional return values. When a function is assigned to a variable, that is called a function expression.
 
-see functions.js (path to function section)
+see functions.js
 */
-
 
 /* 7. undefined
 
@@ -96,6 +124,14 @@ typeof return value -> "undefined"
 
 `undefined` is a bit undefinable, so it may be best described in action. When a variable is created without an assignment, the value will be `undefined`, as well as when a function does not return or resolve to anything, it will return `undefined`. In a logical expression, it is a falsy value. 
 */
+
+let car;
+console.log(car); // undefined
+
+function printSomething(){
+    let print = "Have a good day."
+}
+console.log(printSomething()); // undefined
 
 
 /* 8. null
@@ -108,15 +144,19 @@ typeof return value -> "object"
 Although `null` is a primitive value in JavaScript and effectively used as such, `typeof` returns that it is an "object". 
 */
 
+let end = null;
+console.log(end); // prints `null`
 
 /* 9. NaN
 
-simple? complex? possibly neither
 typeof return value -> "number"
 
-`NaN` is short for "not a number", and perhaps the best detail of `NaN` is that it is a number (type). Close to `undefined` or `null` as a value that does not quite exist, `NaN` is returned when mathematical operations resolve to something that cannot be expressed as a number: when an imaginary number is returned, when something cannot be converted to a number, when there's a failed coercion (2 * 'bam') -> 2 * `NaN` -> `NaN`.
+`NaN` is short for "not a number", and perhaps the best detail of `NaN` is that it is a number (type). Close to `undefined` or `null` as a value that does not quite exist, `NaN` is returned when mathematical operations resolve to something that cannot be expressed as a number: when an imaginary number is returned, when something cannot be converted to a number, or when there's a failed coercion.
 */
 
+let string3 = 'bam'; 
+let number = 2 * string3;
+console.log(number); // prints `NaN`
 
 /* 10. Infinity and -Infinity
 
@@ -132,8 +172,6 @@ Number.NEGATIVE_INFINITY - static dat a property, typeof return value -> "number
 /* 11. Primitive vs Complex Data Types
 
 Simple data types cannot be broken down into anything else. Complex data types can contain many and varying simple data types.
-
-examples of objects and arrays
 */
 
 
