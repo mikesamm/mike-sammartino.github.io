@@ -2,7 +2,7 @@
  * DATA TYPES
  * 
  * Different data have different types in JavaScript. Functionality varies among them, which means 
- * operations done on `strings` may not necessarily be compatible with `numbers`. Some data types 
+ * operations done on a `string` may not necessarily be compatible with a `number`. Some data types 
  * are simple/primitive and some are complex. Complex data types contain many primitive type data.
  * 
  * 1. Number
