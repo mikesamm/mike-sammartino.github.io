@@ -54,7 +54,14 @@ MAGIC_NUMBER = 42;  // MAGIC_NUMBER *cannot* be reassigned because it is a const
 * two. 
 */
 
+const WEEKS_PER_YEAR = 52;
+let dayOfWeek = 'Wednesday';
 
+const WEEKS_PER_YEAR = 53; // this IS NOT allowed. A `const` can only be assigned once in a program
+let dayOfWeek = 'Friday';  // this IS NOT allowed. A `let` variable can be reassigned but not redeclared in the same scope.
+
+var mistake = false;
+var mistake = true;  // this is allowed but should be avoided. Redeclaring a variable with `var` can produce hard-to-fix errors
 
 // 3. Hoisting 
 
