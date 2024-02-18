@@ -12,9 +12,17 @@
 
 /* With Operators
 
-+, +=, more? is there a reason for more? 
-comparison operators
++, +=
+
 */
+let secondPart = 'and this is the second part.'
+let sentence = 'This is the first part,' + ' ' + secondPart;
+console.log(sentence); // prints 'This is the first part, and this is the second part.'
+
+let food = 'hot dogs';
+let adj = 'scrumdiddlyumptious'
+let newLiteral = `I ate some ${food} and I have to say, it was ${adj}.`
+console.log(newLiteral); // prints 'I ate some hot dogs and I have to say, it was scrumdiddlyumptious.'
 
 /* With String Methods
 
@@ -28,3 +36,12 @@ comparison operators
 | .toUpperCase() | returns new string, an all uppercase version of the original
 
 */
+
+let phrase = 'This is a test';
+
+console.log(phrase.includes('test'));  // true
+console.log(phrase.replaceAll('t', 'z')); // This is a zesz
+console.log(phrase.slice(8, 13)); // 'a tes'
+console.log(phrase.split(' ')); // ['This', 'is', 'a', 'test']
+console.log(phrase.toLowerCase()); // 'this is a test'
+console.log(phrase.toUpperCase()); // 'THIS IS A TEST'
