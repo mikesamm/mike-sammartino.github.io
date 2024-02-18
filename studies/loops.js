@@ -1,7 +1,7 @@
 /**
  * LOOPS
  * 
- * Loops are blocks of code that repeat. When many items on an array or many properties on an object need to be accessed, loops are used. Loops can apply the same block of code over and over again to different data, all seemingly at once. There are a few different types of loops described in this document: while, for, and for-in loops. Each have their own syntax and best-suited use cases.
+ * Loops are blocks of code that repeat. When many items on an array or many properties on an object need to be accessed, loops are handy. Loops can apply the same block of code over and over again to different data, all seemingly at once. There are a few different types of loops described in this document: while, for, and for-in loops. Each have their own syntax and best-suited use cases.
  * 
  * 1. while loops
  * 2. for loops
@@ -16,7 +16,7 @@ While loops are handy when we don't know exactly (or abstractly) how many times 
 To initialize: 
 - while keyword
 - condition to check every time the loop is run
-- block of code (including update condition variable)
+- block of code (including updated condition variable)
 
 */
 
@@ -28,12 +28,12 @@ function countArr(num){
     
     while (count <= num) {
         numbers[count - 1] = count;
-        count++;                    // careful for infinite loops
+        count++;                    // careful for infinite loops, condition variable must be updated
     }
     
     console.log(numbers);
 }
-countArr(6);  // prints to console:  [1, 2, 3, 4, 5, 6]
+countArr(6);  // prints to console:  [1, 2, 3, 4, 5, 6] because the user passed in 6 for the num argument
 
 /*
 The steps of execution for the above while loop:
